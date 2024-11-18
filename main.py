@@ -7,17 +7,6 @@ import functions_framework
 # Triggered by a change in a storage bucket
 @functions_framework.cloud_event
 def hello_gcs(cloud_event):
-    """
-    Event-driven ETL function for processing Excel files in a Google Cloud Storage bucket.
-    Triggered when a file is uploaded or modified in the bucket.
-
-    Args:
-        event (dict): Metadata of the triggering file.
-        context (google.cloud.functions.Context): Metadata about the function's execution.
-
-    Returns:
-        None
-    """
     temp_dir = "/tmp/etl_output"
     try:
         data = cloud_event.data
